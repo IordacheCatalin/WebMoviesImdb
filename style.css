@@ -4,6 +4,8 @@ body {
 
 .movies {
     width: 100%;
+    max-width: 2550px;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
@@ -31,4 +33,36 @@ body {
     font-size: 1.8em;
     padding: 15px 10px 0;
     margin-top: auto;
+}
+
+.SearchText{
+    color:#b3b3b3 ;
+    font-size: 40px;
+    margin-right: 40px;
+}
+
+.SearchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input{
+    width: 300px;
+    height: 20px;
+    border: solid 3px rgb(0, 113, 148);
+}
+
+.submitText {
+    width: 120px;
+    height: 28px;
+    border: solid 3px rgb(0, 113, 148);
+    background-color: black;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.submitText:hover {
+    background-color:#272727;
+    color:rgb(0, 113, 148);
 }

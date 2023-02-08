@@ -6,26 +6,33 @@ const options = {
   },
 };
 
-const search = "comedy";
+const search = document
+  .querySelector("form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    return event.target;
+  });
 const webLink =
   "https://online-movie-database.p.rapidapi.com/auto-complete?q=" + search;
 
-fetch(webLink, options)
-  .then((response) => response.json())
-  .then((data) => {
-    const movies = data.d;
-    console.log(data);
+console.log(webLink);
 
-    movies.map((movie) => {
-      const title = movie.l;
-      const image = movie.i.imageUrl;
-      const gender = movie.qid;
-      const rank = movie.rank;
-      const year = movie.y;
-      const actors = movie.s;
+// // fetch(webLink, options)
+//   .then((response) => response.json())
+//   .then((data) => {
+//     const movies = data.d;
+//     console.log(data);
 
-      const movieCard = `<li><h2>${title}</h2> <img src="${image}"/></li>`;
-      document.querySelector(".movies").innerHTML += movieCard;
-    });
-  })
-  .catch((err) => console.error(err));
+//     movies.map((movie) => {
+//       const title = movie.l;
+//       const image = movie.i.imageUrl;
+//       const gender = movie.qid;
+//       const rank = movie.rank;
+//       const year = movie.y;
+//       const actors = movie.s;
+
+//       const movieCard = `<li><h2>${title}</h2> <img src="${image}"/></li>`;
+//       document.querySelector(".movies").innerHTML += movieCard;
+//     });
+//   })
+//   .catch((err) => console.error(err));
