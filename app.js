@@ -9,18 +9,20 @@ const options = {
 const btnSub = document.getElementById("btnSubmit");
 const input = document.getElementById("inputText");
 const form = document.getElementById("myForm");
+const btnprint = document.getElementById("print");
 
-form.addEventListener("submit", getSearchResults);
+btnprint.addEventListener("click", printScreen);
 
-function getSearchResults(event) {
-  (event).preventDefault();
-  console.log(input.value);
-  const link = `https://online-movie-database.p.rapidapi.com/auto-complete?q=${input.value}}`;
-  console.log(link);
-  return link;
+function printScreen() {
+  window.print();
 }
 
-  fetch(link, options)
+btnSub.addEventListener("click", function getData(event) {
+  if(event.keyCode == 13)
+  (event).preventDefault();
+ data = "https://online-movie-database.p.rapidapi.com/auto-complete?q=" + input.value;
+ console.log(data);
+ fetch( data , options)
     .then((response) => response.json())
     .then((data) => {
       const movies = data.d;
@@ -29,14 +31,28 @@ function getSearchResults(event) {
       movies.map((movie) => {
         const title = movie.l;
         const image = movie.i.imageUrl;
-        const gender = movie.qid;
+        const gender = movie.qid.toUpperCase();
         const rank = movie.rank;
         const year = movie.y;
         const actors = movie.s;
 
-        const movieCard = `<li><h2>${title}</h2> <img src="${image}"/></li>`;
+        const movieCard = `
+        <li>
+        <h2>${title}</h2>
+        <h4>${actors}</h4>
+        <p>Year: ${year} ${" "}  Rank:${rank}</p> 
+        <h3>${gender}</h3>
+        <img src="${image}"/>
+        </li>`;
         document.querySelector(".movies").innerHTML += movieCard;
       });
     })
     .catch((err) => console.error(err));
 
+return data;
+} )
+
+
+  
+
+ 
