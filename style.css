@@ -39,7 +39,7 @@ body {
     margin-top: auto;
 }
 
-h3{
+.deleteSection{
   color: rgb(0, 255, 85);
   position: absolute;
   font-size: 24px;

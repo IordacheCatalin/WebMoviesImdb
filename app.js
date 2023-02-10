@@ -12,14 +12,14 @@ const form = document.getElementById("myForm");
 const btnprint = document.getElementById("print");
 
 btnprint.addEventListener("click", printScreen);
+var newMovie = document.getElementById("newMovie");
 
 function printScreen() {
   window.print();
 }
 
-btnSub.addEventListener("click", function getData(event) {
-  if(event.keyCode == enter)
-  (event).preventDefault();
+btnSub.addEventListener("click", function getData(e) {
+  e.preventDefault();
  data = "https://online-movie-database.p.rapidapi.com/auto-complete?q=" + input.value;
  console.log(data);
  fetch( data , options)
@@ -31,17 +31,21 @@ btnSub.addEventListener("click", function getData(event) {
       movies.map((movie) => {
         const title = movie.l;
         const image = movie.i.imageUrl;
-        const gender = movie.qid.toUpperCase();
+        const gender = movie.qid;
         const rank = movie.rank;
         const year = movie.y;
         const actors = movie.s;
 
         const movieCard = `
-        <li>
+        <li id="newMovie">
         <h2>${title}</h2>
         <h4>${actors}</h4>
         <p>Year: ${year} ${" "}  Rank:${rank}</p> 
+        
+        <button class="deleteBtn" onclick="Delete(this,'` + newMovie + `');">Delete</button>
         <h3>${gender}</h3>
+        
+       
         <img src="${image}"/>
         </li>`;
         document.querySelector(".movies").innerHTML += movieCard;
@@ -52,7 +56,15 @@ btnSub.addEventListener("click", function getData(event) {
 return data;
 } )
 
+let list = [];
 
+function Delete(event, value) {
+  var index = list.indexOf(value);
+  if (index >= 0) {
+    list.splice(index, 1);
+  }
+  event.parentNode.parentNode.removeChild(event.parentNode);
+}
   
 
  
