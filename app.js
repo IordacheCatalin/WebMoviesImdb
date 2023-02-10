@@ -10,14 +10,13 @@ const btnSub = document.getElementById("btnSubmit");
 const input = document.getElementById("inputText");
 const form = document.getElementById("myForm");
 const btnprint = document.getElementById("print");
+const imgBody = document.getElementById("imgPlace");
 
-
-
-input.addEventListener("keydown", function(e) {
-  if(e.code === "Enter"){
+input.addEventListener("keydown", function (e) {
+  if (e.code === "Enter") {
     getData(e);
-  }});
-
+  }
+});
 
 btnprint.addEventListener("click", printScreen);
 
@@ -25,10 +24,11 @@ function printScreen() {
   window.print();
 }
 
-btnSub.addEventListener("click", getData)
- 
- function getData(e) {
+btnSub.addEventListener("click", getData);
+
+function getData(e) {
   e.preventDefault();
+  document.getElementById("imgPlace").id = "imgPlaceDisplay";
   data =
     "https://online-movie-database.p.rapidapi.com/auto-complete?q=" +
     input.value;
@@ -57,18 +57,43 @@ btnSub.addEventListener("click", getData)
         <h3>${gender}</h3>
         
        
-        <img src="${image}"/>
+        <img class="movieImage" src="${image}"/>
         </li>`;
+
         document.querySelector(".movies").innerHTML += movieCard;
+
+        // document.body.classList.add("newBody") adding class to body
       });
     })
     .catch((err) => console.error(err));
 
   return data;
-};
+}
 
 function Delete(event) {
   event.parentNode.parentNode.removeChild(event.parentNode);
 }
 
+//Body image change in loop
 
+let images = [
+  "./Asset/MovieImage/1.jpg",
+  "./Asset/MovieImage/2.jpg",
+  "./Asset/MovieImage/3.jpg",
+  "./Asset/MovieImage/4.jpg",
+  "./Asset/MovieImage/5.jpg",
+  "./Asset/MovieImage/6.jpg",
+  "./Asset/MovieImage/7.jpg",
+  "./Asset/MovieImage/8.jpg",
+  "./Asset/MovieImage/9.jpg",
+  "./Asset/MovieImage/10.jpg",
+];
+
+let index = 0;
+
+function imgChange() {
+  imgBody.src = images[index];
+  index > 8 ? (index = 0) : index++;
+}
+
+setInterval(imgChange, 2000);
