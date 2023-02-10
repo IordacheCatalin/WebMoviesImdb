@@ -11,6 +11,7 @@ const input = document.getElementById("inputText");
 const form = document.getElementById("myForm");
 const btnprint = document.getElementById("print");
 const imgBody = document.getElementById("imgPlace");
+const imgBody2 = document.getElementById("imgPlace2");
 
 input.addEventListener("keydown", function (e) {
   if (e.code === "Enter") {
@@ -29,6 +30,7 @@ btnSub.addEventListener("click", getData);
 function getData(e) {
   e.preventDefault();
   document.getElementById("imgPlace").id = "imgPlaceDisplay";
+  document.getElementById("imgPlace2").id = "imgPlaceDisplay2";
   data =
     "https://online-movie-database.p.rapidapi.com/auto-complete?q=" +
     input.value;
@@ -97,3 +99,25 @@ function imgChange() {
 }
 
 setInterval(imgChange, 2000);
+
+//Body image change in loop 2 when media query is active
+
+let images2 = [
+  "./Asset/MovieImage/8.jpg",
+  "./Asset/MovieImage/6.jpg",
+  "./Asset/MovieImage/4.jpg",
+  "./Asset/MovieImage/2.jpg",
+  "./Asset/MovieImage/1.jpg",
+  "./Asset/MovieImage/10.jpg",
+  "./Asset/MovieImage/3.jpg",
+  "./Asset/MovieImage/9.jpg",
+  "./Asset/MovieImage/7.jpg",
+  "./Asset/MovieImage/5.jpg",
+];
+
+function imgChange2() {
+  imgBody2.src = images2[index];
+  index > 8 ? (index = 0) : index++;
+}
+
+setInterval(imgChange2, 2000);
