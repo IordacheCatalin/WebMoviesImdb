@@ -11,18 +11,29 @@ const input = document.getElementById("inputText");
 const form = document.getElementById("myForm");
 const btnprint = document.getElementById("print");
 
+
+
+input.addEventListener("keydown", function(e) {
+  if(e.code === "Enter"){
+    getData(e);
+  }});
+
+
 btnprint.addEventListener("click", printScreen);
-var newMovie = document.getElementById("newMovie");
 
 function printScreen() {
   window.print();
 }
 
-btnSub.addEventListener("click", function getData(e) {
+btnSub.addEventListener("click", getData)
+ 
+ function getData(e) {
   e.preventDefault();
- data = "https://online-movie-database.p.rapidapi.com/auto-complete?q=" + input.value;
- console.log(data);
- fetch( data , options)
+  data =
+    "https://online-movie-database.p.rapidapi.com/auto-complete?q=" +
+    input.value;
+  console.log(data);
+  fetch(data, options)
     .then((response) => response.json())
     .then((data) => {
       const movies = data.d;
@@ -53,18 +64,11 @@ btnSub.addEventListener("click", function getData(e) {
     })
     .catch((err) => console.error(err));
 
-return data;
-} )
-
-// let list = [];
+  return data;
+};
 
 function Delete(event) {
-  // var index = list.indexOf(value);
-  // if (index >= 0) {
-  //   list.splice(index, 1);
-  // }
   event.parentNode.parentNode.removeChild(event.parentNode);
 }
-  
 
- 
+

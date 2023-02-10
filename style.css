@@ -1,121 +1,180 @@
 body {
-    background-color: black;
+  background-color: black;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .movies {
-    width: 100%;
-    max-width: 2550px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap-reverse;
-    direction: rtl;
-    
+  width: 100%;
+  max-width: 2550px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  direction: rtl;
 }
 
 .movies li {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
-    margin: 10px;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    background-color: #272727;
-    justify-content: flex-end;
-    
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #272727;
+  justify-content: flex-end;
 }
 
 .movies li img {
-    max-width: 300px;
-    border-radius: 12px;
+  max-width: 300px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
-.movies li h2{
-    color: whitesmoke;
-    font-size: 1.8em;
-    padding: 15px 10px 0;
-    margin-top: auto;
+.movies li h2 {
+  color: whitesmoke;
+  font-size: 1.8em;
+  padding: 15px 10px 0;
+  margin-top: auto;
 }
 
-.deleteSection{
+h3 {
   color: rgb(0, 255, 85);
   position: absolute;
   font-size: 24px;
   margin-bottom: 2px;
-    
+  text-transform: uppercase;
 }
 
 h4 {
-    color: #b3b3b3;
-    font-size: 16px;
-    margin-bottom: 2px; 
+  color: #b3b3b3;
+  font-size: 16px;
+  margin-bottom: 2px;
 }
 
 p {
-    color: #b3b3b3;
-    font-size: 12px;
-    margin-bottom: 2px; 
+  color: #b3b3b3;
+  font-size: 12px;
+  margin-bottom: 2px;
 }
 
-.SearchText{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:#b3b3b3 ;
-    font-size: 40px;
-    margin-right: 40px;
+.SearchText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b3b3b3;
+  font-size: 40px;
+  margin-right: 40px;
 }
 
 .SearchBar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap:12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .formStyle {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
-.input{
-    width: 300px;
-    height: 20px;
-    border: solid 3px rgb(0, 113, 148);
-    background-color: black;
-    color: white;
-    font-weight: 500;
-    font-size: 16px;
+.input {
+  width: 300px;
+  height: 20px;
+  border: solid 3px rgb(0, 113, 148);
+  background-color: black;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "JetBrains Mono", monospace;
 }
-.input:hover{
-    background-color:#ffffff;
-    color:rgb(0, 0, 0);
-    
+.input:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
 }
 
 .submitText {
-    width: 120px;
-    height: 28px;
-    border: solid 3px rgb(0, 113, 148);
-    background-color: black;
-    color: whitesmoke;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 16px;
+  width: 120px;
+  height: 28px;
+  border: solid 3px rgb(0, 113, 148);
+  background-color: black;
+  color: whitesmoke;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .submitText:hover {
-    background-color:#ffffff;
-    color:rgb(0, 0, 0);
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
 }
 
 p {
-    color:aliceblue
+  color: aliceblue;
 }
 
+.deleteBtn {
+  align-items: center;
+  appearance: none;
+  background-color: #b3b3b3;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #b3b3b3 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  height: 28px;
+  width: 300px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.deleteBtn:focus {
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #b3b3b3 0 -3px 0 inset;
+}
+
+.deleteBtn:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #b3b3b3 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.deleteBtn:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+img {
+  min-width: 300px;
+}
+
+@media only screen and (max-width: 600px) {
+  .SearchText {
+    font-size: 24px;
+  }
+}
