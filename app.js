@@ -42,7 +42,7 @@ btnSub.addEventListener("click", function getData(e) {
         <h4>${actors}</h4>
         <p>Year: ${year} ${" "}  Rank:${rank}</p> 
         
-        <button class="deleteBtn" onclick="Delete(this,'` + newMovie + `');">Delete</button>
+        <button class="deleteBtn" onclick="Delete(this);">Delete</button>
         <h3>${gender}</h3>
         
        
@@ -56,13 +56,13 @@ btnSub.addEventListener("click", function getData(e) {
 return data;
 } )
 
-let list = [];
+// let list = [];
 
-function Delete(event, value) {
-  var index = list.indexOf(value);
-  if (index >= 0) {
-    list.splice(index, 1);
-  }
+function Delete(event) {
+  // var index = list.indexOf(value);
+  // if (index >= 0) {
+  //   list.splice(index, 1);
+  // }
   event.parentNode.parentNode.removeChild(event.parentNode);
 }
   
