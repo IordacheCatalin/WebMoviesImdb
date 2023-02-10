@@ -18,7 +18,7 @@ function printScreen() {
 }
 
 btnSub.addEventListener("click", function getData(event) {
-  if(event.keyCode == 13)
+  if(event.keyCode == enter)
   (event).preventDefault();
  data = "https://online-movie-database.p.rapidapi.com/auto-complete?q=" + input.value;
  console.log(data);
