@@ -29,8 +29,10 @@ btnSub.addEventListener("click", getData);
 
 function getData(e) {
   e.preventDefault();
-  document.getElementById("imgPlace").id = "imgPlaceDisplay";
-  document.getElementById("imgPlace2").id = "imgPlaceDisplay2";
+  // document.getElementById("imgPlace").id = "imgPlaceDisplay";  For the case when you want diferent background
+  // document.getElementById("imgPlace2").id = "imgPlaceDisplay2";
+  // imgBody = document.getElementById("imgPlaceDisplay");
+  // imgBody2 = document.getElementById("imgPlaceDisplay2");
   data =
     "https://online-movie-database.p.rapidapi.com/auto-complete?q=" +
     input.value;
