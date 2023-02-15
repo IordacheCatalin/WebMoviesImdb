@@ -26,14 +26,12 @@ function printScreen() {
 }
 
 btnSub.addEventListener("click", getData);
-
+ 
 function getData(e) {
   e.preventDefault();
-  // document.getElementById("imgPlace").id = "imgPlaceDisplay";  For the case when you want diferent background
-  // document.getElementById("imgPlace2").id = "imgPlaceDisplay2";
-  // imgBody = document.getElementById("imgPlaceDisplay");
-  // imgBody2 = document.getElementById("imgPlaceDisplay2");
-  data =
+  document.getElementById("imgPlace").style.display = "none";
+  document.getElementById("imgPlace2").style.display = "none";
+   data =
     "https://online-movie-database.p.rapidapi.com/auto-complete?q=" +
     input.value;
   console.log(data);

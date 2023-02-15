@@ -188,9 +188,7 @@ p {
   max-width: 1600px;
 }
 
-#imgPlaceDisplay {
-  display: none;
-}
+
 #imgPlace2 {
   display: flex;
   margin: 0 auto;
@@ -201,15 +199,11 @@ p {
   display: none;
 }
 
-#imgPlaceDisplay2 {
-  display: none;
-}
-
 @media only screen and (max-width: 600px) {
     .SearchText {
       font-size: 24px;
     }
     #imgPlace2{
-      display: flex;
+      display: flex; 
     }
   }
