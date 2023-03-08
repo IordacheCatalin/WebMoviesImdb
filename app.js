@@ -63,7 +63,6 @@ function getData(e) {
         </li>`;
 
         document.querySelector(".movies").innerHTML += movieCard;
-
         // document.body.classList.add("newBody") adding class to body
       });
     })
